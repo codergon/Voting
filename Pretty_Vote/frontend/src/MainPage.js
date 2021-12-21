@@ -1,9 +1,12 @@
 import { useSelector } from "react-redux";
-import ElectionList from "./ElectionList";
+import Home from "./Home";
+
+import Faq from "./faq";
 import { useWindowSize } from "@react-hook/window-size";
 import { NavLink, Route, Routes } from "react-router-dom";
 import TopNavigationBar from "./statics/TopNavigationBar";
 import BottomNavigationBar from "./statics/BottomNavigationBar";
+import ElectionList from "./ElectionList";
 
 const MainPage = () => {
   const [width] = useWindowSize();
@@ -26,17 +29,19 @@ const MainPage = () => {
           width: "100%",
           height: "100%",
           opacity: darkTheme ? 0.088 : 0.078,
-          position: "absolute",
+          position: "fixed",
           pointerEvents: "none",
           background: `url("./img/background${darkTheme ? "2" : ""}.svg")`,
         }}
       />
 
-      <TopNavigationBar darkTheme={darkTheme} />
+      <TopNavigationBar darkTheme={darkTheme} NavLink={NavLink} />
 
       <Routes>
-        <Route path="/" element={<ElectionList />} />
-        <Route path="/home" element={<ElectionList />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/participate" element={<ElectionList />} />
       </Routes>
 
       {width <= 850 && (

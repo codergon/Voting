@@ -328,6 +328,10 @@ const ElectionList = () => {
     return (
       <div className="ptt_elt">
         <div className="ptt_elt_inn">
+          <div className="ptt_hd">
+            <p>Participate in Vote 0 Election</p>
+          </div>
+
           <ul className="card_list">
             <div
               style={{
@@ -359,6 +363,10 @@ const ElectionList = () => {
   return (
     <div className="ptt_elt">
       <div className="ptt_elt_inn">
+        <div className="ptt_hd">
+          <p>Participate in Vote 0 Election</p>
+        </div>
+
         <ul className="card_list">
           {election_data?.map((slug, index) => {
             return (

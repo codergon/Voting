@@ -117,6 +117,11 @@ main {
   letter-spacing: 0.5px;
   padding-bottom: 3px;
 }
+.listNavBig li a:focus,
+.listNavBig li a:hover {
+  border: none;
+  outline: none;
+}
 .listNavBig li:hover {
   border-bottom: 1px solid var(--wht);
 }
@@ -328,7 +333,7 @@ main {
   display: flex;
   width: 90vw;
   flex-direction: row;
-  max-width: 350px;
+  max-width: 400px;
   margin: auto;
   align-items: center;
   justify-content: space-around;
@@ -723,7 +728,11 @@ main {
   }
 }
 
-/* My Algo Wallet */
+/* My Algo Wallets */
 #walletconnect-wrapper {
   transform: scale(0.75) !important;
+}
+
+iframe {
+  pointer-events: none !important;
 }

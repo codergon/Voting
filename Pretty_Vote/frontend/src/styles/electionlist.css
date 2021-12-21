@@ -1,11 +1,10 @@
 .ptt_elt {
   width: 100%;
-  /* min-height: 50vh; */
-  height: 50vh;
+  min-height: 50vh;
   position: relative;
   display: flex;
   color: var(--txt-alt);
-  padding: 0px 5vw;
+  padding: 15vh 5vw 0vh;
   flex-direction: column;
 
   font-weight: 400;
@@ -18,19 +17,18 @@
   max-width: 88vw;
 }
 .ptt_hd {
-  z-index: 2;
   display: flex;
   font-size: 15px;
-  position: sticky;
   color: var(--wht);
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-  padding: 20px 0px 16px;
-  position: -webkit-sticky;
   text-transform: uppercase;
-  background: var(--background);
+  letter-spacing: 1px;
+  padding: 25px 0px 16px;
+
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2;
+  margin-bottom: 20px;
   top: calc(var(--sm-hd-height));
-  font-family: "Barlow", sans-serif;
   border-bottom: 1px solid var(--border-default);
 }
 .big_screen .ptt_hd {
@@ -40,7 +38,8 @@
   opacity: 0.7;
 }
 
-.light_theme .ptt_hd {
+.light_theme .ptt_hd p {
+  opacity: 1;
   font-weight: 500;
 }
 
@@ -49,12 +48,13 @@
 .card_list {
   display: flex;
   flex-direction: column;
-  padding: calc(30px + var(--sm-hd-height)) 0px 15px;
+  padding: calc(30px + var(--sm-hd-height)) 0px 30px;
+  padding: 0px 0px 30px;
 }
 
 @media screen and (max-width: 850px) {
   .card_list {
-    padding-bottom: var(--sm-nav-height);
+    padding-bottom: calc(var(--sm-nav-height) * 2);
   }
 }
 
@@ -181,6 +181,8 @@
 
 .amountToCommit {
   display: flex;
+  width: 100%;
+  overflow: hidden;
   align-items: center;
   flex-direction: row;
   margin: 7px 0px 10px;
@@ -193,6 +195,7 @@
   font-size: 15px;
   padding: 7px 12px;
   border-radius: 12px;
+  width: 50px;
   background: transparent;
   border: 1px solid var(--bord-dark);
 }

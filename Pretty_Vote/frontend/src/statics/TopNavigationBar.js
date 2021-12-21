@@ -10,7 +10,7 @@ import GetCommittedAmount from "../GetCommittedAmount";
 import WalletConnect from "@walletconnect/client";
 import QRCodeModal from "algorand-walletconnect-qrcode-modal";
 
-const TopNavigationBar = ({ darkTheme }) => {
+const TopNavigationBar = ({ darkTheme, NavLink }) => {
   const dispatch = useDispatch();
 
   const addressNum = useSelector((state) => state.status.addressNum);
@@ -323,6 +323,57 @@ const TopNavigationBar = ({ darkTheme }) => {
 
         {width > 850 && (
           <ul className="listNavBig">
+            <li>
+              <NavLink
+                style={({ isActive }) => {
+                  return {
+                    display: "flex",
+                    opacity: isActive ? "1" : "0.6",
+                    alignItems: "center",
+                    flexDirection: "column",
+                  };
+                }}
+                to={`/`}
+                key={"home"}
+              >
+                Home
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                style={({ isActive }) => {
+                  return {
+                    display: "flex",
+                    opacity: isActive ? "1" : "0.6",
+                    alignItems: "center",
+                    flexDirection: "column",
+                  };
+                }}
+                to={`/participate`}
+                key={"participate"}
+              >
+                Participate
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                style={({ isActive }) => {
+                  return {
+                    display: "flex",
+                    opacity: isActive ? "1" : "0.6",
+                    alignItems: "center",
+                    flexDirection: "column",
+                  };
+                }}
+                to={`/faq`}
+                key={"faq"}
+              >
+                FAQ
+              </NavLink>
+            </li>
+
             <li onClick={setMode}>
               M
               {darkTheme ? (
